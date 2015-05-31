@@ -15,8 +15,8 @@ $ $GOROOT/bin/minifs -certfile=server.crt -keyfile=server.key \
 ...
 ```
 
-The server will then open a server on https://0.0.0.0:8080/. To inspect
-the current state of the cluster, visit https://0.0.0.0:8080/state.json,
+The server will then open a server on `https://0.0.0.0:8080/`. To inspect
+the current state of the cluster, visit `https://0.0.0.0:8080/state.json`,
 which shows the last reached time of each node in the cluster.
 
 If specified with a `-peers` option, MiniFS will use a gossip protocol to
