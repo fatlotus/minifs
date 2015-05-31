@@ -23,9 +23,11 @@ If specified with a `-peers` option, MiniFS will use a gossip protocol to
 synchronize a consistent hash ring around the cluster. For example:
 
 ```
-$ $GOROOT/bin/minifs -certfile=server.crt -keyfile=server.key -bind=:8080 &
-$ $GOROOT/bin/minifs -certfile=server.crt -keyfile=server.key -bind=:8081 &
-$ curl -L --verbose --insecure https://localhost:8080/mykho.txt; ec 
+$ $GOROOT/bin/minifs -certfile=server.crt -keyfile=server.key -bind=:8080 \
+    -peers=valhalla.uchicago.edu:8080,valhalla.uchicago.edu:8081 &
+$ $GOROOT/bin/minifs -certfile=server.crt -keyfile=server.key -bind=:8081 \
+    -peers=valhalla.uchicago.edu:8080,valhalla.uchicago.edu:8081 &
+$ curl -L --verbose --insecure https://localhost:8080/mykho.txt 
 > GET /mykey.txt HTTP/1.1
 > Host: localhost:8080
 > 
